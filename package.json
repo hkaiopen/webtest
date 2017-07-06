@@ -1,0 +1,22 @@
+{
+  "name": "xero",
+  "version": "1.0.0",
+  "description": "A script to add an ANZ bank account then assert",
+  "main": "addbank.js",
+  "dependencies": {
+     "selenium-webdriver": "^3.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkaiopen/webtest.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Kevin Huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hkaiopen/webtest/issues"
+  },
+  "homepage": "https://github.com/hkaiopen/webtest#readme"
+}

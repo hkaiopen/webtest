@@ -1,8 +1,8 @@
 Add bank account with Selenium Webdriver
 ===========================
-In summary the script works, **able to add bank account as Xero user on Xero website successfully**.
+In summary the script works, **adding a new bank account onto Xero website as an existing user**.
 
-The script is developed by Node.js. I just use Selenium Webdriver module to **keep it as simple as possible**, and didn't use any other modules (e.g. Mocha).
+The script is developed with Node.js. I just use Selenium Webdriver module to keep it as simple as possible, and didn't use any other modules (e.g. Mocha).
 
 The script first uses Promise to control the asynchronus step-by-step clicking and datafilling executions for web test. Should one of the test executions is failed, it will then be handled by the last error handling.
 
@@ -19,7 +19,7 @@ Thank you for your time and consideration!
 ### User Story
 As a Xero User,
 In order to manage my business successfully,
-I want to be able to add an ¡°ANZ (NZ)¡± bank account inside any Xero Organisation.
+I want to be able to add an ANZ (NZ) bank account inside any Xero Organisation.
 
 **Prerequisite**
  1. Have node.js installed from www.nodejs.org

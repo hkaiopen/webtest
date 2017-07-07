@@ -21,12 +21,13 @@
 //Load dependencies
 const {Builder, By, promise, until} = require('selenium-webdriver');
 
+const timeout = 10000; //10 seconds
 var xeroUserName = "hkaiopen@foxmail.com";
 var xeroPassword = "4Interview";
 //If the account has already been added to the system, please change Account Name and Number or set newAccount as false
-var anzAccountName = "3nd Auto input";  //Change another if it has been in the system
+var anzAccountName = "4nd Auto input";  //Change another if it has been in the system
 var anzAccountType = "Everyday (day-to-day)"; 
-var anzAccountNum ="01-1842-0123456-78"; //Change another if it has been in the system
+var anzAccountNum ="01-1842-0123456-98"; //Change another if it has been in the system
 var newAccount = true;
 
 
@@ -40,13 +41,13 @@ let result = promise.consume(function* doAddBankAccount() {
   yield driver.get('https://go.xero.com/');
   
   //---Login Page---
-  yield driver.wait(until.titleContains('Login'), 3000);
+  yield driver.wait(until.titleContains('Login'), timeout);
   yield driver.findElement(By.name('userName')).sendKeys(xeroUserName);
   yield driver.findElement(By.name('password')).sendKeys(xeroPassword);
   yield driver.findElement(By.id('submitButton')).click();
 
   //---Dashboard Page---Initiate request of adding bank account
-  yield driver.wait(until.titleContains('Xero | Dashboard'), 3000);  
+  yield driver.wait(until.titleContains('Xero | Dashboard'), timeout);  
   yield driver.findElement(By.id('Accounts')).click();
   yield driver.findElement(By.linkText('Bank Accounts')).click();
 
@@ -56,11 +57,11 @@ let result = promise.consume(function* doAddBankAccount() {
   yield driver.findElement(By.partialLinkText('Add Bank Account')).click();
 
   //---Find your bank Page---Find ANZ (NZ) in the list element
-  yield driver.wait(until.titleContains('Xero | Find your bank'), 3000); 
+  yield driver.wait(until.titleContains('Xero | Find your bank'), timeout); 
   yield driver.findElement(By.xpath("//*[text()[contains(.,'ANZ (NZ)')]]")).click(); 
 
   //---Enter account details Page---
-  yield driver.wait(until.titleContains('account details'), 3000); 
+  yield driver.wait(until.titleContains('account details'), timeout); 
 
   //!!Make the none display element visible
   yield driver.executeScript("javascript:document.getElementById('accountname-1037-inputEl').setAttribute('style','visibility:visible;');");
@@ -79,11 +80,11 @@ let result = promise.consume(function* doAddBankAccount() {
   }//end of if(newAccount)
 
   //---Bank Accounts Page---Confirm the bank account has been added and is displayed in the page.
-  yield driver.wait(until.titleContains('Xero | Bank Accounts'), 3000); 
+  yield driver.wait(until.titleContains('Xero | Bank Accounts'), timeout); 
   yield driver.findElement(By.xpath("//*[text()[contains(.,'" + anzAccountNum + "')]]")).click(); 
 
   //---Transactions Page---Detailed transaction page of this account.
-  yield driver.wait(until.titleContains('Xero | Transactions'), 3000); 
+  yield driver.wait(until.titleContains('Xero | Transactions'), timeout); 
 
   /*
    *To be developed to connect to internal database to check whether bank account detail above

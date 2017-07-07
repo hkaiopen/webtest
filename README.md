@@ -8,7 +8,7 @@ The script first uses Promise to control the asynchronus step-by-step clicking a
 
 In regarding to the test executions, the script uses **Selenium Webdriver APIs to click and sendKeys by identifying the right elements. The key point solved is that when encountering the element whose Attribute value is display: none or readonly, I alter the HTML Attribute by executing javascript, so that Selenium Webdriver could see and input the elements.**
 
-I also refine the given user story as belows. 
+I also refine the given user story as belows. And have captured the screen during test execution as a video.
 
 Thank you for your time and consideration!
 
